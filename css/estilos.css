@@ -99,11 +99,24 @@ a {
 .destaque{
     height: 88vh;
     background-image: url(../imagens/fundo-destaque.jpg);
+    background-attachment: fixed;
     display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
 
-   h2, p {color: #fff;}
+   h2, p {color: #fff; }
+   /*text-align: center;*/
 
+   h2{font-size: clamp(3rem, 10vw, 7rem);}
+
+   p{font-size: clamp(1,5rem, 3vw, 3rem);}
 }
+
+/*osbre a função clamp()funcao util para responsivo de acordo com criterios de tamanhos minimos, ideal variavel responsivo maximo 
+
+uso comum em textos responsivos< mas pode ser usado em qualquer propriedade que envolva tamanhos (width, heigt.)
+
+clamp(tamanho minimo
+tamanho ideal /variavel responsivo tamanho maximo)
+*/
