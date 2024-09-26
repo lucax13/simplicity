@@ -55,10 +55,22 @@ a {
 }
 
 .topo {
-    height: 12vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
+    position: sticky;
+    top: 0;
+    background-color: var(--cor-clara);
+
+    .limitador {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 12vh;
+    }
+}
+
+.limitador {
+    width: 95vw;
+    margin: auto;
 }
 
 .titulo-menu a {
@@ -96,21 +108,37 @@ a {
     background-color: var(--cor-clara);
 }
 
-.destaque{
+.destaque {
     height: 88vh;
     background-image: url(../imagens/fundo-destaque.jpg);
     background-attachment: fixed;
     display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-   h2, p {color: #fff; }
-   /*text-align: center;*/
+    h2,
+    p {
+        color: #fff;
 
-   h2{font-size: clamp(3rem, 10vw, 7rem);}
 
-   p{font-size: clamp(1,5rem, 3vw, 3rem);}
+        animation-name: animaDestaque;
+        animation-duration: 2s;
+    }
+
+    h2 {
+        font-size: clamp(3rem, 10vw, 7rem);
+    }
+
+    p {
+        font-size: clamp(1, 5rem, 3vw, 3rem);
+        animation-delay: 1s;
+
+        /*antes da animação  o elemento assume o estilo do primeiro keyframe*/
+        animation-fill-mode: backwards;
+
+    }
+
 }
 
 /*osbre a função clamp()funcao util para responsivo de acordo com criterios de tamanhos minimos, ideal variavel responsivo maximo 
@@ -120,3 +148,73 @@ uso comum em textos responsivos< mas pode ser usado em qualquer propriedade que 
 clamp(tamanho minimo
 tamanho ideal /variavel responsivo tamanho maximo)
 */
+
+
+@keyframes animaDestaque {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+article h2 {
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-family: Raleway, sans-serif;
+    color: var(--cor-titulo);
+
+    p {
+        padding: .5rem 0;
+        font-size: 1.2rem;
+    }
+
+    address {
+        font-style: normal;
+        font-size: 1.2rem;
+    }
+}
+
+.front-end,
+.historia,
+.localizacao {
+    text-align: center;
+}
+
+.historia {
+    background-image: url(../imagens/fundo-madeira.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+
+    h2 {
+        color: var(--cor-clara);
+        text-shadow: var(--cor-titulo) 2px 2px 5px;
+    }
+
+    iframe {
+        width: 100%;
+        max-width: 700px;
+        margin-bottom: 2rem;
+    }
+}
+
+.localizacao iframe {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+
+.rodape {
+    border: solid;
+    background-color: #000;
+    height: 30vh;
+    align-items: center;
+    color: var(--cor-clara);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
