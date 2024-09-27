@@ -1,0 +1,266 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-titulo: #4d4d4d;
+    --cor-texto: #333;
+    --cor-escura: #000;
+    --cor-clara: #fff;
+    --cor-intermediaria: #ececec;
+}
+
+body,
+h1,
+h2,
+p,
+figure,
+.links-menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    color: var(--cor-texto)
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.titulo {
+    font-family: Raleway, sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.5rem;
+
+    a {
+        background-color: var(--cor-escura);
+        color: var(--cor-clara);
+        padding: 0.3rem 1rem;
+        border-radius: 4px;
+    }
+}
+
+.topo {
+    
+    position: sticky;
+    top: 0;
+    background-color: var(--cor-clara);
+
+    .limitador {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 12vh;
+    }
+}
+
+.limitador {
+    width: 95vw;
+    margin: auto;
+}
+
+.titulo-menu a {
+    color: var(--cor-escura);
+    font-size: 1.2rem;
+    padding: 1rem;
+    display: inline-block;
+}
+
+.menu a:hover,
+.menu a:focus {
+    background-color: var(--cor-intermediaria);
+}
+
+.links-menu {
+    display: none;
+
+    a {
+        color: var(--cor-escura);
+        font-weight: bold;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+.links-menu.aberto {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: var(--cor-clara);
+}
+
+.destaque {
+    height: 88vh;
+    background-image: url(../imagens/fundo-destaque.jpg);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h2,
+    p {
+        color: #fff;
+
+
+        animation-name: animaDestaque;
+        animation-duration: 2s;
+    }
+
+    h2 {
+        font-size: clamp(3rem, 10vw, 7rem);
+    }
+
+    p {
+        font-size: clamp(1, 5rem, 3vw, 3rem);
+        animation-delay: 1s;
+
+        /*antes da animação  o elemento assume o estilo do primeiro keyframe*/
+        animation-fill-mode: backwards;
+
+    }
+
+}
+
+/*osbre a função clamp()funcao util para responsivo de acordo com criterios de tamanhos minimos, ideal variavel responsivo maximo 
+
+uso comum em textos responsivos< mas pode ser usado em qualquer propriedade que envolva tamanhos (width, heigt.)
+
+clamp(tamanho minimo
+tamanho ideal /variavel responsivo tamanho maximo)
+*/
+
+
+@keyframes animaDestaque {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+article h2 {
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-family: Raleway, sans-serif;
+    color: var(--cor-titulo);
+
+    p {
+        padding: .5rem 0;
+        font-size: 1.2rem;
+    }
+
+    address {
+        font-style: normal;
+        font-size: 1.2rem;
+    }
+}
+
+.front-end,
+.historia,
+.localizacao {
+    text-align: center;
+}
+
+.historia {
+    background-image: url(../imagens/fundo-madeira.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+
+    h2 {
+        color: var(--cor-clara);
+        text-shadow: var(--cor-titulo) 2px 2px 5px;
+    }
+
+    iframe {
+        width: 100%;
+        max-width: 700px;
+        margin-bottom: 2rem;
+    }
+}
+
+.localizacao iframe {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+
+.rodape {
+    border: solid;
+    background-color: #000;
+    height: 30vh;
+    align-items: center;
+    color: var(--cor-clara);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*regras paginas produtos serviços e contato*/
+
+.conteudo-interno{
+    background-color: var(--cor-intermediaria);
+    padding: .5rem;
+    border-radius: 8px;
+
+    h2{
+        padding-left: 0;
+        font-size: 1.8rem;
+    }
+
+    
+}
+
+table{
+    border: solid 4px;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    border-collapse:collapse ;
+}
+
+caption{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding-bottom: .3rem;
+}
+
+th, td{border: solid 1px; color: var(--cor-escura);}
+
+th{
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    padding: .5rem;
+}
+
+td{padding: .4rem;}
+
+td:nth-child(2) {text-align: center;}
+
+td:last-child, th:last-child {text-align: right;}
+
+tr:nth-child(odd){background-color: var(--cor-clara);}
