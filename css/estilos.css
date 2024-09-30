@@ -281,4 +281,28 @@ tr:nth-child(odd){background-color: var(--cor-clara);}
     }
 
 }
+/* media queries regras de uso condicional de acordo com o tamanho a tela  */
+
+@media screen and (min-width: 600px){
+
+    /* esconder menu */
+    .titulo-menu{display: none;}
+    /* exibimos os links listas de links do menu */
+    .links-menu{
+        display: flex;
+
+        /* cada item da lista a ter largura total */
+        li{width: 100%;}
+    
+    }
+
+/* ajuste do tamanho do menu */
+    .menu{width: 60%;}
+}
+
+@media screen and(min-width: 1000px){
+    html{font-size: 18px};
+    .limitador{max-width: 1000px;} 
+    
+}
 
