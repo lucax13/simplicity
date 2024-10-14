@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="ligthbox/css/lightbox.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
@@ -54,19 +56,19 @@
             </p>
 
             <figure class="galeria">
-                <a href="imagens/consultoria-treinamento.jpg">
-                    <img  src="./imagens/consultoria-treinamento-mini.jpg" alt="">
+                <a data-title="consultoria e treinamento" data-lightbox="foto" href="imagens/consultoria-treinamento.jpg">
+                    <img src="./imagens/consultoria-treinamento-mini.jpg" alt="">
                 </a>
 
-                <a href="imagens/desenvolvimento-web.jpg">
-                    <img  src="./imagens/desenvolvimento-web-mini.jpg" alt="">
+                <a data-title="desenvolvimento web" data-lightbox="foto"  href="imagens/desenvolvimento-web.jpg">
+                    <img src="./imagens/desenvolvimento-web-mini.jpg" alt="">
                 </a>
 
-                <a href="imagens/design-grafico.jpg">
-                    <img  src="./imagens/design-grafico-mini.jpg" alt="">
+                <a data-title="desing design-grafico" data-lightbox="foto"   href="imagens/design-grafico.jpg">
+                    <img src="./imagens/design-grafico-mini.jpg" alt="">
                 </a>
 
-                <a href="imagens/marketing-digital.jpg">
+                <a data-title="marketing digital" data-lightbox="foto"  href="imagens/marketing-digital.jpg">
                     <img src="./imagens/marketing-digital-mini.jpg" alt="">
                 </a>
 
@@ -98,7 +100,19 @@
         <p>Simplicity é um site fictício desenvolvido para fins educacionais &copy; <time>2024<time></p>
     </footer>
 
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <script src="ligthbox/js/lightbox.min.js"></script>
+
+    <script>
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true,
+          albumLabel: "foto %1 of %2"
+        })
+    </script>
 
     <script src="js/menu.js"></script>
 </body>
+
 </html>
